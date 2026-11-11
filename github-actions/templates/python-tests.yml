@@ -1,0 +1,33 @@
+# Template: lint + tests for a Python project in a sub-folder.
+# Copy to .github/workflows/<project>-tests.yml at the repo root,
+# then replace <project> (3 places + the file name).
+name: <project> tests
+
+on:
+  push:
+    paths:
+      - <project>/**
+      - .github/workflows/<project>-tests.yml
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.14'
+
+      - name: Install dependencies
+        run: python -m pip install pytest flake8
+
+      - name: Lint
+        run: python -m flake8 .
+        working-directory: <project>
+
+      - name: Test
+        run: python -m pytest -v
+        working-directory: <project>
