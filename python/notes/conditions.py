@@ -80,3 +80,9 @@ print(valid(None), valid([1, 2]), valid([1, 2, 3]))   # False False True
 
 # -- Inline if/else (ternary) -------------------------------
 print('Even' if 4 % 2 == 0 else 'Odd')   # Even
+
+# all() over tuples: True only if EVERY comparison is True
+rules = [(2, 'a'), (1, 'b')]   # (minimum, letter to count)
+text = 'aab'
+print(all(minimum <= text.count(letter) for minimum, letter in rules))  # True
+# One False in the loop is enough to make all() return False

@@ -100,3 +100,10 @@ print(re.findall(r'\d+|[+-]', '266-66'))     # ['266', '-', '66']
 # \d = one digit, \d+ = one or more, | = or, [+-] = + or -
 # findall does NOT search for the characters you wrote as separators:
 # it returns every piece of the string that matches the pattern
+
+# -- re.findall: list every match, len() counts them --------
+# re.findall(pattern, text): what to look for, where to look
+print(re.findall(r'\d', 'aB3dE9'))      # ['3', '9']  \d = ONE digit
+print(re.findall(r'[A-Z]', 'aB3dE9'))   # ['B', 'E']  [A-Z] = ONE uppercase
+print(len(re.findall(r'\d', 'aB3dE9')))  # 2
+# r'...' = raw string: Python keeps the backslash for the regex

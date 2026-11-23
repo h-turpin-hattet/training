@@ -84,3 +84,9 @@ print(food)      # the two food expenses
 # The list comprehension does the same and is usually preferred:
 print([e['amount'] for e in expenses])                   # [30, 10, 50]
 print([e for e in expenses if e['category'] == 'food'])  # same as `food`
+
+# -- if __name__ == '__main__' ------------------------------
+# Run directly (python file.py): __name__ is '__main__' -> block runs
+# Imported from another file: __name__ is the file name -> block skipped
+if __name__ == '__main__':
+    print('Run directly')
