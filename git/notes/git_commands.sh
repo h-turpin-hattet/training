@@ -57,3 +57,13 @@ gh repo rename <new-name>             # rename from the terminal (gh CLI)
 #   submodule (arrow on GitHub): delete the inner .git folder.
 # - Forgot a file in the last commit, not pushed yet:
 #   git add <file> ; git commit --amend --no-edit
+
+# -- Commit message: Conventional Commits (in English) ------
+# Format: type: short description
+#
+#   feat      something new (feature, new exercise)
+#   fix       correct a bug or a mistake
+#   docs      notes, README, comments
+#   refactor  reorganize without changing behavior
+#   test      add or change tests
+#   chore     small maintenance (.gitignore, config)
